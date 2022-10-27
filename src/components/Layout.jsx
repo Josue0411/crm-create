@@ -29,7 +29,7 @@ const Layout = () => {
         </nav>
       </aside>
 
-      <main className="md:w-3/4 p-10 md:max-h-screen overflow-scroll">
+      <main className="md:w-3/4 bg-gray-100 p-10 md:max-h-screen overflow-scroll">
         <Outlet />
       </main>
     </div>
