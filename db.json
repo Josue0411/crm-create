@@ -1,4 +1,5 @@
- {"clientes" :[
+{
+  "clientes": [
     {
       "id": 1,
       "nombre": "Juan",
@@ -33,5 +34,14 @@
       "telefono": 1398198938,
       "email": "pedro@juan.com",
       "empresa": "Codigo Con Juan"
+    },
+    {
+      "nombre": "luigi",
+      "empresa": "facebook",
+      "email": "l.alvarez301194@gmail.com",
+      "telefono": "4578214630",
+      "notas": "es marico y muy marico",
+      "id": 6
     }
-  ]}
+  ]
+}
