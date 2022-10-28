@@ -3,6 +3,12 @@ export async function obtenerClientes() {
   const resultado = await respuesta.json();
   return resultado;
 }
+
+export async function obtenerCliente(id) {
+  const respuesta = await fetch(`${import.meta.env.VITE_API_URl}/${id}`);
+  const resultado = await respuesta.json();
+  return resultado;
+}
 //prender la api local  - json-server --watch db.json -
 
 export async function agregarCliente(datos) {
