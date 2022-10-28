@@ -25,3 +25,28 @@ export async function agregarCliente(datos) {
     console.log(error);
   }
 }
+export async function actualizarCliente(id, datos) {
+  try {
+    const respuesta = await fetch(`${import.meta.env.VITE_API_URl}/${id}`, {
+      method: "PUT",
+      body: JSON.stringify(datos),
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+    await respuesta.json();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function eliminarCliente(id) {
+  try {
+    const respuesta = await fetch(`${import.meta.env.VITE_API_URl}/${id}`, {
+      method: "Delete",
+    });
+    await respuesta.json();
+  } catch (error) {
+    console.log(error);
+  }
+}

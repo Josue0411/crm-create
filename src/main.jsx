@@ -3,10 +3,14 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Layout from "./components/Layout";
-import ErrorPage from './components/ErrorPage'
-import EditarCliente,{loader as editarClienteLoader} from './pages/EditarCliente'
+import ErrorPage from "./components/ErrorPage";
+import EditarCliente, {
+  loader as editarClienteLoader,
+  action as editarClienteAction,
+} from "./pages/EditarCliente";
 import NuevoCliente, { action as nuevoCliente } from "./pages/NuevoCliente";
 import Index, { loader as clientesLoader } from "./pages/Index";
+import { action as eliminarClienteAction } from "./components/Cliente";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -16,19 +20,25 @@ const router = createBrowserRouter([
         index: true,
         element: <Index />,
         loader: clientesLoader,
-        errorElement: <ErrorPage/>
+        errorElement: <ErrorPage />,
       },
       {
         path: "/clientes/nuevo",
         element: <NuevoCliente />,
         action: nuevoCliente,
+        errorElement: <ErrorPage />,
       },
       {
-        path:'/clientes/:clienteId/editar',
-        element: <EditarCliente/>,
+        path: "/clientes/:clienteId/editar",
+        element: <EditarCliente />,
         loader: editarClienteLoader,
-        errorElement: <ErrorPage/>
-      }
+        action: editarClienteAction,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/clientes/:clienteId/eliminar",
+        action: eliminarClienteAction,
+      },
     ],
   },
 ]);
