@@ -53,3 +53,6 @@ function Cliente({ cliente }) {
 }
 
 export default Cliente;
+
+//host de estrapi
+//postgres://root:YbzQLHjBWhCyXsw0bbV4WVJRkux1N5lw@dpg-cde0uu82i3mu1eq454f0-a.frankfurt-postgres.render.com/guitarvnz
